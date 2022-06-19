@@ -1,0 +1,25 @@
+<div class="container">
+  
+  <nav>
+    <div>onenet.</div>
+
+    <div class="buttons">
+      <div (click)="mint()">Mint</div>
+      <div>Pitch Deck</div>
+      <div>About Us</div>
+      <div (click)="disable()" *ngIf="yourAddress; else noWallet" >Connected</div>
+      <ng-template #noWallet ><div (click)="askToEnable()">Connect Wallet</div></ng-template>
+    </div>
+  </nav>
+
+  <div>
+    YOUR ADDRESS !!!  : {{ yourAddress ? yourAddress : 'Sign in bihhh' }}<br>
+    Amount : {{ amount ? ((amount.balance.amount / 1e6) | json): 'sign in duhh'}}<br>
+    <div class="nft-pic"><div>My NFT</div><img [src]="nft?.extension?.media[0]?.url"></div>
+  </div>
+
+  <footer>
+    Copyright &#169; 2022	onenet. special thanks to secret network for grant funding 
+  </footer>
+
+</div>
