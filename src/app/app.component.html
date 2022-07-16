@@ -1,25 +1,387 @@
 <div class="container">
-  
   <nav>
-    <div>onenet.</div>
+    <div class="logo">onenet.</div>
 
     <div class="buttons">
+      <div>Home</div>
+      <div>Learn</div>
       <div (click)="mint()">Mint</div>
-      <div>Pitch Deck</div>
-      <div>About Us</div>
-      <div (click)="disable()" *ngIf="yourAddress; else noWallet" >Connected</div>
-      <ng-template #noWallet ><div (click)="askToEnable()">Connect Wallet</div></ng-template>
+      <div>My Collection</div>
+      <div
+        class="connect-button"
+        (click)="disable()"
+        *ngIf="yourAddress; else noWallet"
+      >
+        Connected
+      </div>
+      <ng-template #noWallet
+        ><div class="connect-button" (click)="askToEnable()">
+          Connect
+        </div></ng-template
+      >
     </div>
   </nav>
-
   <div>
-    YOUR ADDRESS !!!  : {{ yourAddress ? yourAddress : 'Sign in bihhh' }}<br>
-    Amount : {{ amount ? ((amount.balance.amount / 1e6) | json): 'sign in duhh'}}<br>
-    <div class="nft-pic"><div>My NFT</div><img [src]="nft?.extension?.media[0]?.url"></div>
+    <div class="hero-home">
+      <video autoplay muted loop>
+        <source src="../assets/Fly Through-opt.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-home-top">
+        <div>
+          <div class="onenet-logo-hero">onenet.</div>
+          <div class="onenet-text-hero">
+            The gaming platform for the Secret Network and beyond.<br />
+            Building Bushi.
+          </div>
+        </div>
+        <div class="hero-buttons">
+          <div>Explore</div>
+          <div>Mint</div>
+        </div>
+      </div>
+
+      <div class="hero-links">
+        <div class="trailer-link">Watch Bushi Trailer</div>
+        <div class="scroll-link">Scroll Down</div>
+      </div>
+    </div>
+    <div class="details-post-home">
+      <div class="onenet-attributes">
+        <div class="attribute-title">onenet.</div>
+        <div class="attributes-text-big">
+          <span
+            >The <span class="blue-highlight">Gaming Platform</span> for the
+            Cosmos</span
+          >
+        </div>
+        <div class="divider"></div>
+        <div class="attributes-text-small">
+          onenet. is a video game distribution platform looking to blur the
+          lines between traditional and web3 gaming.
+        </div>
+        <div class="four-part-attributes">
+          <div class="part">
+            <div class="icon">
+              <img src="../assets/images/controller.png" />
+            </div>
+            <div class="part-title">Video Game Hub</div>
+            <div class="part-description">
+              An all-in-one platform to manage, access, and launch video games.
+            </div>
+          </div>
+          <div class="part-divider"></div>
+          <div class="part">
+            <div class="icon"><img src="../assets/images/one-icon.png" /></div>
+            <div class="part-title">$ONET Token</div>
+            <div class="part-description">
+              Powered by our native token <b><i>$ONET (One Token)</i></b> that
+              powers all games on the platform.
+            </div>
+          </div>
+          <div class="part-divider"></div>
+          <div class="part">
+            <div class="icon"><img src="../assets/images/merge.png" /></div>
+            <div class="part-title">Cross-Game NFTs</div>
+            <div class="part-description">
+              Our NFTs have cross-game compatibility with other games hosted on
+              the onenet. platform.
+            </div>
+          </div>
+          <div class="part-divider"></div>
+          <div class="part">
+            <div class="icon"><img src="../assets/images/lock.png" /></div>
+            <div class="part-title">Privacy By Default</div>
+            <div class="part-description">
+              Our ethos and mission is deliver the privacy of web3 to the gaming
+              space. No opt ins.
+            </div>
+          </div>
+        </div>
+        <div class="whitepaper-button">Whitepaper</div>
+      </div>
+    </div>
+    <div class="featured-game">
+      <div class="featured-game-video">video</div>
+      <div class="featured-game-container">
+        <div class="featured-game-text">
+          <div class="featured-game-title">
+            Featured Game &nbsp;<span>| BUSHI</span>
+          </div>
+          <div class="featured-game-divider"></div>
+          <div class="featured-game-content">
+            Bushi is a third person competitive shooter that leverages NFT
+            technology to reward players for their time and effort. <br />
+            <br />
+            Our team of seasoned game developers take you on a journey to
+            compete in a truly fast paced arena. <br /><br />
+            Experience the thrill of one of the largest web3 video games being
+            released in the Cosmos! <br /><br />
+          </div>
+          <div class="featured-game-learn-more">Learn More</div>
+        </div>
+      </div>
+    </div>
+    <div class="our-partners">
+      <div class="partners-title">Our Partners</div>
+      <div class="partners-subtext">
+        Core Contributors, Advisors, and Backers
+      </div>
+      <div class="partners-div"></div>
+      <div class="partners-images">
+        <img
+          src="../assets/images/secretfoundation.png"
+          alt="Secret Foundation Logo"
+          aria-label="Secret Foundation"
+        />
+        <img
+          src="../assets/images/secretlabs.png"
+          alt="Secret Labs Logo"
+          aria-label="Secret Labs"
+        />
+        <img
+          src="../assets/images/secretdao.png"
+          alt="Secret Dao Logo"
+          aria-label="Secret Dao"
+        />
+        <img
+          src="../assets/images/secretnodes.png"
+          alt="Secret Nodes Logo"
+          aria-label="Secret Nodes"
+        />
+        <img
+          src="../assets/images/afrowhale.png"
+          alt="Afrowhale Studios"
+          aria-label="Afrowhale Studios"
+        />
+      </div>
+    </div>
+    <div class="nft-promo-container">
+      <div class="nft-image">
+        <img src="../assets/images/testnft.png" />
+      </div>
+      <div class="nft-image">
+        <img src="../assets/images/testnft2.png" />
+      </div>
+      <div class="nft-image">
+        <img src="../assets/images/testnft.png" />
+      </div>
+      <div class="nft-image">
+        <img src="../assets/images/testnft2.png" />
+      </div>
+    </div>
+    <div class="genesis-collection">
+      <div class="collection-title">
+        <div class="header-text">Our <span>Genesis NFT Collection</span></div>
+        <div class="header-div"></div>
+        <div class="header-subtext">
+          Our genesis NFT collection serves as both a fundraiser and a way to
+          build a strong community behind onenet. and Bushi.<br /><br />
+          All mints will go towards accelerating the development of the platform
+          as well as our flagship title game, Bushi.
+        </div>
+      </div>
+      <div class="util-title">Utility</div>
+      <div class="utility-items">
+        <div class="util-top-row">
+          <div>Lifetime alpha access to all onenet. published games.</div>
+          <div>First access to the onenet. gaming platform.</div>
+          <div>Whitelist eligibility.</div>
+        </div>
+        <div class="util-bottom-row">
+          <div>DAO access.</div>
+          <div>Stakeable NFT.</div>
+          <div>Post alpha limited edition skin guarantee.</div>
+        </div>
+      </div>
+      <div class="mint-button">Mint</div>
+      <div class="mint-cost">100 sSCRT</div>
+    </div>
+    <div class="roadmap-container">
+      <div class="quarter-selector">
+        <div class="quarter-title">| Roadmap</div>
+        <div class="quarter-sub-container">
+          <div (click)="setQuarter(0)" class="quarter">
+            <div
+              [ngClass]="{ 'box-selected': currentQuarter === 0 }"
+              class="quarter-box"
+            >
+              Q3
+            </div>
+            2022
+          </div>
+          <div (click)="setQuarter(1)" class="quarter">
+            <div
+              [ngClass]="{ 'box-selected': currentQuarter === 1 }"
+              class="quarter-box"
+            >
+              Q4
+            </div>
+            2022
+          </div>
+          <div (click)="setQuarter(2)" class="quarter">
+            <div
+              [ngClass]="{ 'box-selected': currentQuarter === 2 }"
+              class="quarter-box"
+            >
+              Q1
+            </div>
+            2023
+          </div>
+          <div (click)="setQuarter(3)" class="quarter">
+            <div
+              [ngClass]="{ 'box-selected': currentQuarter === 3 }"
+              class="quarter-box"
+            >
+              Q2
+            </div>
+            2023
+          </div>
+        </div>
+      </div>
+      <div class="roadmap-data" *ngIf="currentQuarter === 0">
+        <div class="begin-title">And So It Begins...</div>
+        <div class="roadmap-div"></div>
+        <div>
+          We have already began cultivating a strong group of supporters,
+          contributors, and backers to both the onenet. community and Bushi. We
+          will continue these efforts throughout this quarter to bring as much
+          awareness as we can to Secret Network and beyond.
+        </div>
+        <div>
+          <ul>
+            <li>Official V1 website Launch</li>
+            <li>Genesis Collection NFT Mint Goes Live</li>
+            <li>Announcement of the DAO</li>
+            <li>Second Playable Character Reveal</li>
+            <li>Whitepaper Release</li>
+            <li>Tokenomics V1</li>
+          </ul>
+        </div>
+      </div>
+      <div class="roadmap-data" *ngIf="currentQuarter === 1">
+        <div class="begin-title">Alpha Launches Galore!</div>
+        <div class="roadmap-div"></div>
+        <div>
+          We will begin to show the first look of the onenet. game platform as
+          well as show an entirely new look for the UI/UX of Bushi.
+        </div>
+        <div>
+          <ul>
+            <li>Alpha Launch of onenet.</li>
+            <li>UX/UI Overhaul - Bushi</li>
+            <li>Alpha Launch of Bushi</li>
+            <li>Community Feedback Gathering</li>
+          </ul>
+        </div>
+      </div>
+      <div class="roadmap-data" *ngIf="currentQuarter === 2">
+        <div class="begin-title">Token Launch and DAO!</div>
+        <div class="roadmap-div"></div>
+        <div>
+          We are planning the release of $ONET in this quarter while also
+          launching our DAO to gain community feedback in preparation for our
+          full release of Bushi.
+        </div>
+        <div>
+          <ul>
+            <li>DAO Launch</li>
+            <li>Token Distribution</li>
+            <li>Community Events</li>
+            <li>Quality Assurance Testing</li>
+            <li>Bug Fixing/Balancing/Game Design Changes</li>
+          </ul>
+        </div>
+      </div>
+      <div class="roadmap-data" *ngIf="this.currentQuarter === 3">
+        <div class="begin-title">Full Release, Major Tournament, and More!</div>
+        <div class="roadmap-div"></div>
+        <div>
+          We will release the full version of Bushi to show the community the
+          vision that we, along with the community, have been working on as well
+          as hosting one of the first tournaments for Bushi!
+        </div>
+        <div>
+          <ul>
+            <li>Anti-Cheat Upgrade</li>
+            <li>Full Release of Bushi</li>
+            <li>First Major Tournament</li>
+            <li>& More!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="blog-exerpt">
+      <div class="blog-excerpt-title">Latest News</div>
+    </div>
+    <div class="footer">
+      <div>
+        <div class="footer-title">Never Miss Out</div>
+        <div class="footer-subtext">
+          Keep up with all things onenet. and follow our socials!
+        </div>
+        <div class="socials">
+          <img src="../assets/images/twitter.png" />
+          <img src="../assets/images/youtube.png" />
+          <img src="../assets/images/discord.png" />
+          <img src="../assets/images/telegram.png" />
+        </div>
+      </div>
+      <div class="faq-container">
+        <div class="question-box">
+          <div class="faq-title">Frequently Asked Questions:</div>
+          <div class="faq-question" [ngClass]="{'faq-box-selected': currentFaq === 0}" (click)="setFaq(0)">
+            How do I get on Gensis NFT Collection whitelist?
+          </div>
+          <div class="faq-question" [ngClass]="{'faq-box-selected': currentFaq === 1}" (click)="setFaq(1)">When will the game be released?</div>
+          <div class="faq-question" [ngClass]="{'faq-box-selected': currentFaq === 2}" (click)="setFaq(2)">
+            Will I make any money from playing Bushi?
+          </div>
+          <div class="faq-question bottom-question" [ngClass]="{'faq-box-selected': currentFaq === 3}" (click)="setFaq(3)">How do I buy $ONET?</div>
+        </div>
+        <div class="answer-box">
+          <div class="answer-title">Answers:</div>
+          <div class="answer-contents" *ngIf="currentFaq === 0">
+            We will be releasing more information on our whitelist on our social
+            media platforms; so make sure to follow them!<br /><br />
+            We will begin with doing giveaways from some of our partners and
+            contributors for our whitelist.<br /><br />
+            Shortly after our initial minting period for whitelisters has ended,
+            we will be opening the mint to the public if any should be left
+            outstanding.<br /><br />
+          </div>
+          <div class="answer-contents" *ngIf="currentFaq === 1">
+            The alpha version of Bushi is scheduled to be released in December of 2022.<br><br>
+            The full version of Bushi is schedueld to release in Q2 of 2023.<br><br>
+            Please keep in mind that developing a game of this size can be unpredictable at times and these estimations, though are well thought out and planned, can be changed and adapted based on different scenarios and events that may occur.<br><br>
+          </div>
+          <div class="answer-contents" *ngIf="currentFaq === 2">
+            We are developing Bushi as a video game first and foremost. Although there may be rewards given to players for playing and accomplishing missions in the game, by no way shape or form do we guarantee any monetary compensation by playing Bushi.<br><br>
+
+            Bushi is an enjoyable web3 video game first. All rewards and benefits are only an additive to an already exciting game.<br><br>
+          </div>
+          <div class="answer-contents" *ngIf="currentFaq === 3">
+            We are scheduling the first distribution of $ONET in Quarter 1 of 2023.<br><br>
+            We will be releasing more information on how to participate in the distribution at a later date.<br><br>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        Copyright © 2022 Onenet, LLC All Rights Reserved.
+      </div>
+    </div>
+    <!-- <div>
+      YOUR ADDRESS !!! : {{ yourAddress ? yourAddress : "Sign in bihhh" }}<br />
+      Amount :
+      {{ amount ? (amount.balance.amount / 1e6 | json) : "sign in duhh" }}<br />
+      <div class="nft-pic">
+        <div>My NFT</div>
+        <img [src]="nft?.extension?.media[0]?.url" />
+      </div>
+    </div> -->
   </div>
 
-  <footer>
-    Copyright &#169; 2022	onenet. special thanks to secret network for grant funding 
-  </footer>
-
+  <!-- <footer>
+    Copyright &#169; 2022 onenet. special thanks to secret network for grant
+    funding
+  </footer> -->
 </div>
