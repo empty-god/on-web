@@ -311,7 +311,16 @@
       </div>
     </div>
     <div class="blog-exerpt">
-      <div class="blog-excerpt-title">Latest News</div>
+      <div class="blog-exerpt-title">Latest News</div>
+      <div class="blog-container">
+        <div class="blog-item" *ngFor="let post of posts">
+          <div class="article-hover">Article</div>
+          <div class="article-img"><img src="{{post.thumbnail}}"></div>
+          <div class="article-title">{{post.title}}</div>
+          <div class="article-description">{{post.description}}</div>
+          <a href="{{post.link}}" target="_blank" class="article-view-button">View</a>
+        </div>
+      </div>
     </div>
     <div class="footer">
       <div>

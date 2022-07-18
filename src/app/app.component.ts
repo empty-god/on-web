@@ -12,6 +12,8 @@ import {
 import { CreateViewingKeyContractParams } from 'secretjs/dist/extensions/access_control/viewing_key/params';
 import { Snip721GetTokensResponse } from 'secretjs/dist/extensions/snip721/msg/GetTokens';
 import { Snip721MintOptions } from 'secretjs/dist/extensions/snip721/types';
+import { Post, BlogData } from './interfaces/blog.interface';
+import { BlogService } from './services/blog.service';
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -37,14 +39,25 @@ interface Auth {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements AfterViewInit {
+  userId = '@onenet';
   title = 'onenet-web';
   yourAddress = '';
   amount: any;
   nft: any;
   currentQuarter = 0;
   currentFaq = 0;
+  posts: Post[] = [];
 
-  constructor(private window: Window) {}
+  constructor(private window: Window, private blog: BlogService) {
+    this.blog.getBlogPosts(this.userId).subscribe((pubs: BlogData) => {
+      this.posts = pubs.items.map((item, index) => {
+          let shortenedDesc = item.description.substring(item.description.indexOf('</strong></p>\n<p>') + 17, 500);
+          item.description = shortenedDesc;
+          return item;
+      });
+      this.posts.splice(4);
+    });
+  }
 
   ngAfterViewInit(): void {
     // this.getData();
