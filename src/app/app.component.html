@@ -41,8 +41,13 @@
       </div>
 
       <div class="hero-links">
-        <div class="trailer-link">Watch Bushi Trailer</div>
-        <div class="scroll-link">Scroll Down</div>
+        <div class="trailer-link">Watch Bushi Trailer
+          <img src="../assets/images/arrow-icon.png">
+        </div>
+        <div class="scroll-link">
+          <div><img src="../assets/images/scroll-icon.png"></div>
+          Scroll Down
+        </div>
       </div>
     </div>
     <div class="details-post-home">
@@ -101,7 +106,11 @@
       </div>
     </div>
     <div class="featured-game">
-      <div class="featured-game-video">video</div>
+      <div class="featured-game-video">
+        <video controls playsinline #videoPlayer (click)="toggleVideo($event)">
+          <source src="../assets/Fly Through-opt.mp4" type="video/mp4" />
+        </video>
+      </div>
       <div class="featured-game-container">
         <div class="featured-game-text">
           <div class="featured-game-title">
@@ -156,17 +165,37 @@
       </div>
     </div>
     <div class="nft-promo-container">
-      <div class="nft-image">
-        <img src="../assets/images/testnft.png" />
-      </div>
-      <div class="nft-image">
-        <img src="../assets/images/testnft2.png" />
-      </div>
-      <div class="nft-image">
-        <img src="../assets/images/testnft.png" />
-      </div>
-      <div class="nft-image">
-        <img src="../assets/images/testnft2.png" />
+      <div class="nft-container-anim">
+        <div class="nft-image nft-animation">
+          <img src="../assets/images/testnft.png" />
+        </div>
+        <div class="nft-image nft-animation">
+          <img src="../assets/images/testnft.png" />
+        </div>
+        <div class="nft-image nft-animation">
+          <img src="../assets/images/testnft.png" />
+        </div>
+        <div class="nft-image nft-animation">
+          <img src="../assets/images/testnft.png" />
+        </div>
+        <div class="nft-image nft-animation">
+          <img src="../assets/images/testnft.png" />
+        </div>
+        <div class="nft-image nft-animation">
+          <img src="../assets/images/testnft.png" />
+        </div>
+        <div class="nft-image nft-animation">
+          <img src="../assets/images/testnft.png" />
+        </div>
+        <div class="nft-image nft-animation">
+          <img src="../assets/images/testnft.png" />
+        </div>
+        <div class="nft-image nft-animation">
+          <img src="../assets/images/testnft.png" />
+        </div>
+        <div class="nft-image nft-animation">
+          <img src="../assets/images/testnft.png" />
+        </div>
       </div>
     </div>
     <div class="genesis-collection">
@@ -193,8 +222,7 @@
           <div>Post alpha limited edition skin guarantee.</div>
         </div>
       </div>
-      <div class="mint-button">Mint</div>
-      <div class="mint-cost">100 sSCRT</div>
+      <div class="mint-button">Join Whitelist</div>
     </div>
     <div class="roadmap-container">
       <div class="quarter-selector">
@@ -315,10 +343,19 @@
       <div class="blog-container">
         <div class="blog-item" *ngFor="let post of posts">
           <div class="article-hover">Article</div>
-          <div class="article-img"><img src="{{post.thumbnail}}"></div>
-          <div class="article-title">{{post.title}}</div>
-          <div class="article-description">{{post.description}}</div>
-          <a href="{{post.link}}" target="_blank" class="article-view-button">View</a>
+          <div class="article-img"><img src="{{ post.thumbnail }}" /></div>
+          <div class="article-data">
+            <div>
+              <div class="article-title">{{ post.title }}</div>
+              <div class="article-description">{{ post.description }}</div>
+            </div>
+            <a
+              href="{{ post.link }}"
+              target="_blank"
+              class="article-view-button"
+              >View</a
+            >
+          </div>
         </div>
       </div>
     </div>
@@ -329,23 +366,43 @@
           Keep up with all things onenet. and follow our socials!
         </div>
         <div class="socials">
-          <img src="../assets/images/twitter.png" />
-          <img src="../assets/images/youtube.png" />
-          <img src="../assets/images/discord.png" />
-          <img src="../assets/images/telegram.png" />
+          <a target="_blank" href="https://twitter.com/playBushi"><img src="../assets/images/twitter.png" /></a>
+          <a target="_blank" href="https://www.youtube.com/channel/UCOn8LWSVBbD7XbXLCOhkVqA"><img src="../assets/images/youtube.png" /></a>
+          <a target="_blank" href="https://discord.gg/qFYuFBgq"><img src="../assets/images/discord.png" /></a>
+          <a target="_blank" href=""><img src="../assets/images/telegram.png" /></a>
         </div>
       </div>
       <div class="faq-container">
         <div class="question-box">
           <div class="faq-title">Frequently Asked Questions:</div>
-          <div class="faq-question" [ngClass]="{'faq-box-selected': currentFaq === 0}" (click)="setFaq(0)">
+          <div
+            class="faq-question"
+            [ngClass]="{ 'faq-box-selected': currentFaq === 0 }"
+            (click)="setFaq(0)"
+          >
             How do I get on Gensis NFT Collection whitelist?
           </div>
-          <div class="faq-question" [ngClass]="{'faq-box-selected': currentFaq === 1}" (click)="setFaq(1)">When will the game be released?</div>
-          <div class="faq-question" [ngClass]="{'faq-box-selected': currentFaq === 2}" (click)="setFaq(2)">
+          <div
+            class="faq-question"
+            [ngClass]="{ 'faq-box-selected': currentFaq === 1 }"
+            (click)="setFaq(1)"
+          >
+            When will the game be released?
+          </div>
+          <div
+            class="faq-question"
+            [ngClass]="{ 'faq-box-selected': currentFaq === 2 }"
+            (click)="setFaq(2)"
+          >
             Will I make any money from playing Bushi?
           </div>
-          <div class="faq-question bottom-question" [ngClass]="{'faq-box-selected': currentFaq === 3}" (click)="setFaq(3)">How do I buy $ONET?</div>
+          <div
+            class="faq-question bottom-question"
+            [ngClass]="{ 'faq-box-selected': currentFaq === 3 }"
+            (click)="setFaq(3)"
+          >
+            How do I buy $ONET?
+          </div>
         </div>
         <div class="answer-box">
           <div class="answer-title">Answers:</div>
@@ -359,18 +416,28 @@
             outstanding.<br /><br />
           </div>
           <div class="answer-contents" *ngIf="currentFaq === 1">
-            The alpha version of Bushi is scheduled to be released in December of 2022.<br><br>
-            The full version of Bushi is schedueld to release in Q2 of 2023.<br><br>
-            Please keep in mind that developing a game of this size can be unpredictable at times and these estimations, though are well thought out and planned, can be changed and adapted based on different scenarios and events that may occur.<br><br>
+            The alpha version of Bushi is scheduled to be released in December
+            of 2022.<br /><br />
+            The full version of Bushi is schedueld to release in Q2 of 2023.<br /><br />
+            Please keep in mind that developing a game of this size can be
+            unpredictable at times and these estimations, though are well
+            thought out and planned, can be changed and adapted based on
+            different scenarios and events that may occur.<br /><br />
           </div>
           <div class="answer-contents" *ngIf="currentFaq === 2">
-            We are developing Bushi as a video game first and foremost. Although there may be rewards given to players for playing and accomplishing missions in the game, by no way shape or form do we guarantee any monetary compensation by playing Bushi.<br><br>
+            We are developing Bushi as a video game first and foremost. Although
+            there may be rewards given to players for playing and accomplishing
+            missions in the game, by no way shape or form do we guarantee any
+            monetary compensation by playing Bushi.<br /><br />
 
-            Bushi is an enjoyable web3 video game first. All rewards and benefits are only an additive to an already exciting game.<br><br>
+            Bushi is an enjoyable web3 video game first. All rewards and
+            benefits are only an additive to an already exciting game.<br /><br />
           </div>
           <div class="answer-contents" *ngIf="currentFaq === 3">
-            We are scheduling the first distribution of $ONET in Quarter 1 of 2023.<br><br>
-            We will be releasing more information on how to participate in the distribution at a later date.<br><br>
+            We are scheduling the first distribution of $ONET in Quarter 1 of
+            2023.<br /><br />
+            We will be releasing more information on how to participate in the
+            distribution at a later date.<br /><br />
           </div>
         </div>
       </div>

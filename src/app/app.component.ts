@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Keplr, Window as KeplrWindow } from '@keplr-wallet/types';
 import {
   MsgExecuteContract,
@@ -39,6 +39,7 @@ interface Auth {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements AfterViewInit {
+  @ViewChild('videoPlayer') videoplayer?: ElementRef<HTMLVideoElement>;
   userId = '@onenet';
   title = 'onenet-web';
   yourAddress = '';
@@ -47,20 +48,25 @@ export class AppComponent implements AfterViewInit {
   currentQuarter = 0;
   currentFaq = 0;
   posts: Post[] = [];
+  
 
   constructor(private window: Window, private blog: BlogService) {
     this.blog.getBlogPosts(this.userId).subscribe((pubs: BlogData) => {
       this.posts = pubs.items.map((item, index) => {
-          let shortenedDesc = item.description.substring(item.description.indexOf('</strong></p>\n<p>') + 17, 500);
-          item.description = shortenedDesc;
-          return item;
+        let shortenedDesc = item.description.substring(
+          item.description.indexOf('</strong></p>\n<p>') + 17,
+          500
+        );
+        item.description = shortenedDesc;
+        return item;
       });
       this.posts.splice(4);
     });
   }
 
   ngAfterViewInit(): void {
-    // this.getData();
+    console.log(this.videoplayer?.nativeElement)
+    //this.getData();
   }
 
   setQuarter(quarter: number) {
@@ -69,6 +75,10 @@ export class AppComponent implements AfterViewInit {
 
   setFaq(faq: number) {
     this.currentFaq = faq;
+  }
+
+  toggleVideo(event: any) {
+    console.log(event);
   }
 
   getData() {
