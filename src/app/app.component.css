@@ -4,64 +4,6 @@
   justify-content: space-between;  
 }
 
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #171a24;
-  width: 100vw;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 30;
-}
-
-.logo {
-  box-sizing: border-box;
-  width: 120px;
-  height: 42px;
-  left: 40px;
-  top: 19px;
-  margin-left: 40px;
-  text-align: center;
-  line-height: 40px;
-  background: url(../assets/images/onenet-bg.png);
-  border: 1px solid #ffffff;
-  border-radius: 1.77305px;
-}
-
-.buttons {
-  /* width: 30%; */
-  padding-right: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.buttons div {
-  margin-left: 40px;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-}
-
-.connect-button {
-  position: relative;
-  box-sizing: border-box;
-  background-clip: padding-box;
-  background-image: url('../assets/buttons/small-radius-button.png');
-  border: 2px solid transparent;
-  width: 150px;
-  height: 32px;
-  line-height: 28px !important;
-  border-radius: 2px;
-  text-align: center;
-  background-repeat: round;
-}
-
 .hero-home {
   height: calc(100vh - 80px);
   margin-top: 80px;
@@ -135,7 +77,20 @@ nav {
   font-weight: 700;
   font-size: 16px;
   line-height: 54px;
+  text-transform: uppercase;
 }
+
+.hero-buttons div:hover {
+  background: linear-gradient(63.8deg, #E55D87 0%, #50D4FF 67.02%);
+  border-color: #fff;
+}
+
+.hero-buttons div:active {
+  background: linear-gradient(63.8deg, #E55D87 0%, #50D4FF 67.02%);
+  border-color: #fff;
+  color: #000;
+}
+
 
 .hero-buttons div::after {
   content: "";
@@ -150,6 +105,10 @@ nav {
   border-radius: 78px;
 }
 
+.hero-buttons div:hover::after {
+  content: none;
+}
+
 .trailer-link {
   font-family: "Montserrat";
   font-style: normal;
@@ -157,6 +116,8 @@ nav {
   font-size: 16px;
   line-height: 19px;
   display: flex;
+  text-decoration: none;
+  color: #fff;
 }
 
 .trailer-link img {
@@ -184,7 +145,7 @@ nav {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url('../assets/images/blue-bg.png');
+  background-image: url('../assets/images/blue-bg.webp');
   background-size: cover;
   background-color: #191B23;
 }
@@ -281,12 +242,9 @@ nav {
 }
 
 .whitepaper-button {
-  background-image: url('../assets/buttons/big-radius-button.png');
-  background-repeat: round;
   border-radius: 78px;
   box-sizing: border-box;
   border: 1px solid transparent;
-  background-clip: padding-box;
   position: relative;
   width: 184px;
   height: 56px;
@@ -296,6 +254,36 @@ nav {
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.whitepaper-button:hover {
+  border-color: #fff;
+  background: linear-gradient(63.8deg, #E55D87 0%, #50D4FF 67.02%);
+}
+
+.whitepaper-button:active {
+  border-color: #fff;
+  background: linear-gradient(63.8deg, #E55D87 0%, #50D4FF 67.02%);
+  color: #000;
+}
+
+.whitepaper-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: 78px;
+  background: linear-gradient(63.8deg, #E55D87 0%, #50D4FF 67.02%);
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+          mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
 }
 
 .featured-game {
@@ -352,7 +340,7 @@ nav {
   width: 100%;
   height: 100%;
   top: 0;
-  z-index: 500;
+  z-index: 0;
   bottom: 0;
   right: 0;
   left: 0;
@@ -415,6 +403,17 @@ nav {
   font-size: 16px;
   line-height: 20px;
   margin-top: 25px;
+  cursor: pointer;
+  position: absolute;
+}
+
+.featured-game-learn-more:hover {
+  color: #fff!important;
+}
+
+.featured-game-learn-more:active {
+  color: #fff!important;
+  border-color: #fff!important;
 }
 
 .featured-game-title span {
@@ -446,7 +445,7 @@ nav {
   align-items: center;
   height: 550px;
   justify-content: center;
-  background-image: url('../assets/images/blue-bg.png');
+  background-image: url('../assets/images/blue-bg.webp');
   background-size: cover;
   background-color: #191B23;
 }
@@ -530,7 +529,7 @@ nav {
 }
 
 .genesis-collection {
-  background-image: url('../assets/images/blue-bg.png');
+  background-image: url('../assets/images/blue-bg.webp');
   height: 868px;
   display: flex;
   flex-direction: column;
@@ -612,13 +611,27 @@ nav {
   line-height: 60px;
   position: relative;
   border: 2px solid transparent;
-  border-radius: 4px;
   width: 166px;
   height: 60px;
   margin-top: 40px;
+  text-transform: uppercase;
+  border-radius: 78px;
+
 }
 
-.mint-button::before {
+.mint-button:hover {
+  border-color: #fff;
+  background: linear-gradient(63.8deg, #E55D87 0%, #50D4FF 67.02%);;
+  color: #fff;
+}
+
+.mint-button:active {
+  border-color: #fff;
+  background: linear-gradient(63.8deg, #E55D87 0%, #50D4FF 67.02%);;
+  color: #000;
+}
+
+.mint-button::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -633,7 +646,10 @@ nav {
      linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
           mask-composite: exclude;
+}
 
+.mint-button:hover::after {
+  content: initial;
 }
 
 .utility-items {
@@ -719,7 +735,7 @@ nav {
 }
 
 .quarter-selector {
-  background: url('../assets/images/roadmap-image.png');
+  background: url('../assets/images/roadmap-image.webp');
   background-position: center;
   background-size: cover;
   display: flex;
@@ -779,6 +795,10 @@ nav {
   cursor: pointer;
 }
 
+.quarter-box:hover {
+  color: #FFEF5B;
+}
+
 .box-selected {
   border: 1px solid transparent!important;
   position: relative;
@@ -836,7 +856,7 @@ nav {
 
 .blog-exerpt {
   height: calc(100vh - 80px);
-  background: url('../assets/images/blue-bg.png');
+  background: url('../assets/images/blue-bg.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -858,7 +878,7 @@ nav {
 
 .footer {
   height: 1085px;
-  background: url('../assets/images/footer-bg.png');
+  background: url('../assets/images/footer-bg.webp');
   background-position: center;
   background-size: cover;
   display: flex;
@@ -888,8 +908,12 @@ nav {
 }
 
 .socials img {
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.socials img:hover {
+  filter: invert(62%) sepia(73%) saturate(4063%) hue-rotate(308deg) brightness(96%) contrast(86%);
 }
 
 .faq-container {
@@ -959,11 +983,18 @@ nav {
   margin-bottom: 15px;
   justify-content: center;
   padding-left: 25px;
+  cursor: pointer;
+}
+
+.faq-question:hover {
+  color: #FFEF5B;
 }
 
 .faq-box-selected {
   border: 1px solid transparent!important;
   position: relative;
+  color: #fff!important;
+  cursor: initial;
 }
 
 .faq-box-selected::after{
@@ -991,13 +1022,31 @@ nav {
   line-height: 19px;
   width: 80vw;
   height: 50px;
-  border: 1px solid #fff;
+  border: 1px solid transparent;
   border-radius: 105px;
   margin-bottom: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(163.3deg, #1D1D1D 11.54%, #1E1D19 90.45%);
+  position: relative;
+}
+
+.copyright::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: 105px;
+  background: linear-gradient(63.8deg, #E55D87 0%, #50D4FF 67.02%);
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+          mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
 }
 
 .blog-item {
@@ -1098,6 +1147,7 @@ nav {
   color: #fff;
   text-decoration: none;
   position: relative;
+  text-transform: uppercase;
 }
 
 .article-view-button::after {
@@ -1190,4 +1240,28 @@ nav {
   -o-animation: move 10s linear infinite;
   animation: move 10s linear infinite;
   display: flex;
+}
+
+@media screen and (max-width: 1440px) {
+  .hero-home-top {
+    margin-top: 16vh;
+  }
+  .featured-game-text {
+    padding-left: 120px;
+  }
+  .article-view-button {
+    width: 6vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-home-top {
+    margin-top: 13vh;
+  }
+  .featured-game-text {
+    padding-left: 110px;
+  }
+  .article-view-button {
+    width: 6vw;
+  }
 }

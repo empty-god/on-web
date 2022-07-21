@@ -1,30 +1,9 @@
 <div class="container">
-  <nav>
-    <div class="logo">onenet.</div>
-
-    <div class="buttons">
-      <div>Home</div>
-      <div>Learn</div>
-      <div (click)="mint()">Mint</div>
-      <div>My Collection</div>
-      <div
-        class="connect-button"
-        (click)="disable()"
-        *ngIf="yourAddress; else noWallet"
-      >
-        Connected
-      </div>
-      <ng-template #noWallet
-        ><div class="connect-button" (click)="askToEnable()">
-          Connect
-        </div></ng-template
-      >
-    </div>
-  </nav>
+  <app-nav></app-nav>
   <div>
     <div class="hero-home">
-      <video autoplay muted loop>
-        <source src="../assets/Fly Through-opt.mp4" type="video/mp4" />
+      <video muted autoPlay loop #homeVideo>
+        <source src="../assets/Fly Through-try3.mp4" type="video/mp4" />
       </video>
       <div class="hero-home-top">
         <div>
@@ -41,9 +20,9 @@
       </div>
 
       <div class="hero-links">
-        <div class="trailer-link">Watch Bushi Trailer
+        <a href="https://www.youtube.com/watch?v=4qX4Rx6-D_k" target="_blank" class="trailer-link">Watch Bushi Trailer
           <img src="../assets/images/arrow-icon.png">
-        </div>
+        </a>
         <div class="scroll-link">
           <div><img src="../assets/images/scroll-icon.png"></div>
           Scroll Down

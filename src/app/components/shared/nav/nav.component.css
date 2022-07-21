@@ -1,0 +1,91 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #171a24;
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 30;
+}
+
+.logo {
+  box-sizing: border-box;
+  width: 120px;
+  height: 42px;
+  left: 40px;
+  top: 19px;
+  margin-left: 40px;
+  text-align: center;
+  line-height: 40px;
+  background: url(../../../../assets/images/onenet-bg.png) no-repeat;
+  border: 1px solid #ffffff;
+  border-radius: 1.77305px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+.buttons {
+  /* width: 30%; */
+  padding-right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons div {
+  margin-left: 40px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.connect-button {
+  position: relative;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+  width: 150px;
+  height: 32px;
+  line-height: 28px !important;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.connect-button:hover {
+  background: linear-gradient(63.8deg, #E55D87 0%, #50D4FF 67.02%);
+  border-color: #fff;
+}
+
+.connect-button:active {
+  background: linear-gradient(63.8deg, #E55D87 0%, #50D4FF 67.02%);
+  border-color: #fff;
+  color: #000;
+}
+
+.connect-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 2px;
+  background: linear-gradient(63.8deg, #E55D87 0%, #50D4FF 67.02%);
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+          mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+.connect-button:hover::after {
+  content: initial;
+}

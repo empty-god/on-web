@@ -1,0 +1,22 @@
+<nav>
+  <a class="logo" [href]="'/'">onenet.</a>
+
+  <div class="buttons">
+    <div>Home</div>
+    <div>Learn</div>
+    <div (click)="mint()">Mint</div>
+    <div>My Collection</div>
+    <div
+      class="connect-button"
+      (click)="disable()"
+      *ngIf="yourAddress; else noWallet"
+    >
+      Connected
+    </div>
+    <ng-template #noWallet
+      ><div class="connect-button" (click)="askToEnable()">
+        Connect
+      </div></ng-template
+    >
+  </div>
+</nav>
